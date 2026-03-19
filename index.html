@@ -427,11 +427,7 @@
     .hero-photo-frame {
       width: clamp(240px, 35vw, 340px);
       height: clamp(300px, 45vw, 420px);
-      background: var(--bg3);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
       position: relative;
-      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -440,8 +436,8 @@
     .hero-photo-frame img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: top;
+      object-fit: contain;
+      object-position: center;
       display: block;
     }
 
@@ -481,50 +477,44 @@
     }
 
     /* ── ABOUT ── */
-    .about-summary {
-      margin-bottom: 2.5rem;
+    .profile-summary {
+      margin-bottom: 0.5rem;
     }
 
-    .about-summary p {
-      font-size: clamp(0.9rem, 2vw, 1rem);
+    .profile-summary p {
+      font-size: 0.95rem;
       color: var(--muted);
-      line-height: 1.9;
+      line-height: 1.8;
       margin-bottom: 1rem;
     }
 
-    .about-summary p:last-child {
+    .profile-summary p:last-child {
       margin-bottom: 0;
     }
 
     /* photo + details row */
     .about-card-row {
       display: grid;
-      grid-template-columns: 200px 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 2rem;
-      align-items: start;
     }
 
     /* photo card */
     .about-photo-card {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      backdrop-filter: var(--glass);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      padding: 1.5rem 1rem;
+      align-items: stretch;
+      padding: 0;
       gap: 0.7rem;
       text-align: center;
     }
 
     .about-photo-box {
-      width: 110px;
-      height: 130px;
-      border-radius: 8px;
+      width: 100%;
+      height: 100%;
+      min-height: 480px;
+      border-radius: 12px;
       overflow: hidden;
-      border: 1px solid rgba(197, 168, 130, 0.2);
-      background: var(--bg2);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -572,11 +562,7 @@
 
     /* profile details */
     .profile-card {
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      backdrop-filter: var(--glass);
+      padding: 0;
     }
 
     .profile-row {
@@ -665,9 +651,7 @@
     }
 
     .skill-pct {
-      font-size: 0.8rem;
-      color: var(--accent);
-      font-weight: 500;
+      display: none;
     }
 
     .skill-track {
@@ -1433,8 +1417,7 @@
       <div class="hero-photo-wrap">
         <!-- TO ADD PHOTO: replace the ph-box div with <img src="your-photo.jpg" alt="Revanth A"/> -->
         <div class="hero-photo-frame">
-          <div class="deco-line"></div>
-          <img src="revanth.jpeg" alt="Revanth A" />
+          <img src="hero.png" alt="Revanth A" />
         </div>
       </div>
     </div>
@@ -1447,33 +1430,28 @@
     <div class="section-label">About Me</div>
     <h2>Who I Am</h2>
 
-    <!-- 1. Full-width summary -->
-    <div class="about-summary">
-      <p>I am a Data Science student with a strong interest in UI/UX design and user-centered product development. I am
-        passionate about creating simple, intuitive, and visually engaging digital experiences that solve real-world
-        problems.</p>
-      <p>I am currently building my skills in design thinking, prototyping, and modern interface design — with a focus
-        on bridging data intelligence and human-centered design.</p>
-    </div>
-
     <!-- 2. Photo (left) + Profile details (right) -->
     <div class="about-card-row">
 
       <!-- LEFT: small photo card -->
       <div class="about-photo-card">
         <div class="about-photo-box">
-          <!-- TO ADD PHOTO: <img src="your-photo.jpg" alt="Revanth A"/> -->
-          <div class="about-ph">
-            <i class="fa fa-user"></i>
-            <span>Add Photo</span>
-          </div>
+          <img src="revanth.jpeg" alt="Revanth A" />
         </div>
-        <div class="about-card-name">Revanth A</div>
-        <div class="about-card-role">3rd Year Data Science Student</div>
       </div>
 
       <!-- RIGHT: profile details -->
       <div class="profile-card">
+        <div class="profile-summary">
+          <p>I am a Data Science student with a strong interest in UI/UX design and user-centered product development. I
+            am
+            passionate about creating simple, intuitive, and visually engaging digital experiences that solve real-world
+            problems.</p>
+          <p>I am currently building my skills in design thinking, prototyping, and modern interface design — with a
+            focus
+            on bridging data intelligence and human-centered design.</p>
+        </div>
+        <div class="divider" style="margin: 1.5rem 0; opacity: 0.2;"></div>
         <div class="profile-row">
           <span class="profile-key">Profile:</span>
           <span class="profile-val">UI/UX Design &amp; Data Science</span>
@@ -1736,10 +1714,8 @@
             <div class="contact-icon"><i class="fa fa-envelope"></i></div>
             <div>
               <div class="contact-item-label">Email</div>
-              <div class="contact-item-text"><a
-                  href="/cdn-cgi/l/email-protection#82e3f0e7f4e3ecf6eab0b2b3b6c2e5efe3ebeeace1edef"
-                  style="color:var(--text);text-decoration:none;"><span class="__cf_email__"
-                    data-cfemail="76170413001718021e4446474236111b171f1a5815191b">[email&#160;protected]</span></a>
+              <div class="contact-item-text"><a href="mailto:arevanth2014@gmail.com"
+                  style="color:var(--text);text-decoration:none;">arevanth2014@gmail.com</a>
               </div>
             </div>
           </div>
@@ -1802,8 +1778,7 @@
   <footer>
     <div style="display:flex;flex-direction:column;align-items:center;gap:1.2rem;">
       <div class="social-icons">
-        <a href="/cdn-cgi/l/email-protection#d2b3a0b7a4b3bca6bae0e2e3e692b5bfb3bbbefcb1bdbf" class="soc-btn"
-          title="Email"><i class="fa fa-envelope"></i></a>
+        <a href="mailto:arevanth2014@gmail.com" class="soc-btn" title="Email"><i class="fa fa-envelope"></i></a>
         <a href="tel:+919342775332" class="soc-btn" title="Phone"><i class="fa fa-phone"></i></a>
         <a href="https://www.linkedin.com/in/revanth-anand/" target="_blank" class="soc-btn" title="LinkedIn"><i
             class="fab fa-linkedin-in"></i></a>
@@ -1812,10 +1787,8 @@
         <a href="https://github.com/revanth-a-sudo" target="_blank" class="soc-btn" title="GitHub"><i
             class="fab fa-github"></i></a>
       </div>
-      <div>© 2025 Revanth A · Coimbatore, India · <a
-          href="/cdn-cgi/l/email-protection#58392a3d2e39362c306a68696c183f35393134763b3735"
-          style="color:var(--accent);text-decoration:none;"><span class="__cf_email__"
-            data-cfemail="2243504754434c564a1012131662454f434b4e0c414d4f">[email&#160;protected]</span></a></div>
+      <div>© 2025 Revanth A · Coimbatore, India · <a href="mailto:arevanth2014@gmail.com"
+          style="color:var(--accent);text-decoration:none;">arevanth2014@gmail.com</a></div>
     </div>
   </footer>
 
@@ -1850,7 +1823,7 @@
     </div>
   </div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
   <script>
     // ── FULL BACKGROUND ANIMATION (pure canvas, no CDN needed) ──
     (function () {
